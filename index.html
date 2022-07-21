@@ -12,10 +12,46 @@
 
 
 <body>
-    <button>Player-1</button>
-    <button>Player-2</button>
-    <h1>Juego De Jere</h1>
-    <div id='gameContainer'></div>
+    <div id='gameContainer'>
+        <div class="Player">
+            <div class="player-name">Player 1</div>
+        </div>
+        <div class="Player2">
+            <div class="player-name">Player 2</div>
+        </div>
+        <div class="timer">
+            <div class="Draw">10:00</div>
+        </div>
+        <div class="win-Total" id="win-Total">
+            <div class="Wins" id="Wins">Wins: 1</div>
+        </div>
+        <div class="win-Total-2" id="win-Total-2">
+            <div class="Wins-2" id="Wins-2">Wins: 1</div>
+        </div>
+        <div class="player-winner" id="player-winner">
+            <div winning-text>Player 1 Wins!</div>
+            <button id="restartButton">Restart Game</button> 
+        </div>
+        <div class="player-winner-2" id="player-winner-2">
+            <div winning-text>Player 2 Wins!</div>
+            <button id="restartButton">Restart Game</button> 
+        </div>
+        <div class="Draw-Game" id="Draw-Game">
+            <div Draw-text>Draw!</div>
+            <button id="restartButton">Restart Game</button> 
+        </div>
+        <div class="start-Screen" id="start-Screen">
+            <div game-title-text>JERE</div>
+            <div class="enterName">
+                <input type="text" id="enterName"
+            class="form__input" autocomplete="off" placeholder="Enter Player's Name Here!">
+                <label for="playersName"></label>
+            </div>
+            <button id="startButton">Play</button>
+        </div>
+    </div>
+ 
+    
     <div id='gameOver'>
         <p>Game Over, <span id='winner'></span></p>
 

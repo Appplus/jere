@@ -22,8 +22,14 @@ squareArray.forEach(({state}) => {
 
 
 //determine if player2 wins 
-
-
+function isDraw() {
+    let shouldReturn = true;
+squareArray.forEach(({state}) => {
+    if (state == "") shouldReturn = false;
+ });
+ return shouldReturn;
+}
+//determin how to win
 function wonGame () {
     const lines = [
       [0, 1, 2, 3],
@@ -52,7 +58,7 @@ function wonGame () {
 
 
     
-
+//click element
 class ClassSquare {
     constructor(element, index) {
        this.element = element;
@@ -68,9 +74,16 @@ class ClassSquare {
         this.element.querySelector('p').innerHTML = this.state;
         if(wonGame()) return Draw("The winner is player " + this.state);
         if(isDraw()) return gameOver('it is a draw')
-        PlayerOne == "RedCircle" ? (PlayerOne = "0") : (PlayerOne = "RedCircle");
+        PlayerOne == "RedCircle" ? (PlayerOne = "RedCircle") : (PlayerOne = "RedCircle");
+        Playertwo == "BlueCircle" ? (PlayerTwo = "BlueCircle") : (Playertwo = "BlueCircle");
     }
+
 }
+
+function swapturns(){
+    PlayerTwo = !PlayerTwo
+}
+
 
 for (let index = 0; index < 16; index++) {
     const div = document.createElement("div");
