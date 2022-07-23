@@ -1,16 +1,19 @@
 const container = document.getElementById("gameContainer"); 
+const restartButton = document.getElementById('restartButton')
 const squareArray = [];
-let PlayerOne = "RedCircle";
-let PlayerTwo = "BlueCircle";
- 
-   
-//Here we need to determine when player moves to get to form a Line on any directions, if so  line formmed player win.
-//if Player forms a line player wins and system will display "player 1 Win". Winner will then have the option to restart the game. 
+let img = document.querySelector('img')
+let nextMove = "X"
+
+//game over
+
+
 function gameOver(message){
     document.getElementById("winner").innerHTML = message;
     container.style.display = "none";
     document.getElementById("gameOver").style.display = "block";
 }
+
+
 // determine if player 1 wins 
 function isDraw() {
     let shouldReturn = true;
@@ -29,7 +32,9 @@ squareArray.forEach(({state}) => {
  });
  return shouldReturn;
 }
-//determin how to win
+
+
+//determine how to win
 function wonGame () {
     const lines = [
       [0, 1, 2, 3],
@@ -48,7 +53,7 @@ function wonGame () {
         if (
             squareArray[a].state !== "" &&
             squareArray[a].state === squareArray[b].state &&
-            squareArray[a].state === squareArray[c].state
+            squareArray[a].state === squareArray[c].state 
         ) {
             return true;
         }
@@ -66,23 +71,21 @@ class ClassSquare {
        this.state = "";  
     }
     clicked() {
-        this.state = PlayerOne;
+        console.log("clicked " + this.index);
+        this.state = nextMove;
         this.element.classList.remove("notClicked");
-        this.element.oneclick = function () {
+        this.element.onclick = function () {
             return false;
         };
         this.element.querySelector('p').innerHTML = this.state;
-        if(wonGame()) return Draw("The winner is player " + this.state);
-        if(isDraw()) return gameOver('it is a draw')
-        PlayerOne == "RedCircle" ? (PlayerOne = "RedCircle") : (PlayerOne = "RedCircle");
-        Playertwo == "BlueCircle" ? (PlayerTwo = "BlueCircle") : (Playertwo = "BlueCircle");
+        if(wonGame()) return gameOver("The winner is player " + this.state);
+        if(isDraw()) return gameOver("it is a draw")
+        nextMove == "X" ? (nextMove = "O") : (nextMove = "X");
     }
 
 }
 
-function swapturns(){
-    PlayerTwo = !PlayerTwo
-}
+
 
 
 for (let index = 0; index < 16; index++) {
@@ -91,9 +94,18 @@ for (let index = 0; index < 16; index++) {
     const square = new ClassSquare(div, index);
     div.onclick = function () {
         square.clicked();
-    };    
+    };
     div.appendChild(document.createElement("p"));
     container.appendChild(div);
     squareArray.push(square);
+
 }
 
+
+//Create image
+
+// var blueImage = document.createElement('img')
+// blueImage.src = "/Asset/blue-2.png"
+// var redImage = document.createElement('img')
+// redImage.src = "/Asset/red-2.png"
+// p.appendChild(blueImage)

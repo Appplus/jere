@@ -1,6 +1,57 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ 
+  body {
     background-color: #2b2929;
 }
+
+.container{
+    position: absolute;
+    width: 90%;
+    right: 10px;
+    transform: translate(0, -50%);
+    top: 50%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
+h1{
+writing-mode: vertical-lr;   
+display: inline;
+background-color: #256DC1;
+color: white;
+padding: 15px;
+height: 56%;
+transform: rotate(180deg);
+}
+
+.container2 {
+        position: absolute;
+        width: 90%;
+        Left: 1500px;
+        transform: translate(0, -50%);
+        top: 50%;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+h2{
+    writing-mode: vertical-lr;   
+    display: inline;
+    background-color: #C23838;
+    color: white;
+    font-size: 60px;
+    text-size-adjust: 50px;
+    padding: 30px;
+    width: 40px;
+    height: 60%;
+    bottom: 30px;
+    position: relative;
+    justify-content: center;
+    transform: rotate(0deg);
+    }
 
 #gameOver{
     display:none;
@@ -29,7 +80,7 @@ body {
     border: 3px solid gray; 
     resize: none;
     width: 20%;
-    /*height: 35%;*/
+    height: 32%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +91,7 @@ body {
     font-size: 80px;
     font-weight: bold;
     text-align: center;
+    color:#cc1111
 }
 
 
@@ -261,9 +313,15 @@ body {
     color: black;
     justify-items: center;
     height: 50px;
-    padding-right: 44px;
+    padding-right: 28px;
     padding-left: 42px;
     justify-items: center;
+}
+
+.player-name {
+    position: relative;
+    justify-content: center;
+    padding: 8px;
 }
 
 
@@ -277,11 +335,16 @@ body {
     background-color:black;
     border: .2px solid white;
     height: 52px;
-    padding-right: 44px;
+    padding-right: 28px;
     padding-left: 42px;
     justify-items: center;
 }
 
+.player-name2 {
+    position: relative;
+    justify-content: center;
+    padding: 8px;  
+}
 
 
 .timer {
@@ -295,39 +358,56 @@ body {
     color: #31A435;
     justify-items: center;
     height: 52px;
-    padding-right: 160px;
+    padding-right: 143px;
     padding-left: 158px;
     justify-items: center;
+}
+
+.Draw {
+    position: relative;
+    justify-content: center;
+    padding: 8px;
 }
 
 .win-Total {
     display: flex;
     position: absolute;
-    left: 565px;
-    bottom: 64px;
+    left: 35.3rem;
+    bottom: 5px;
     border: 2px solid white;
     font-size: 2rem;
     background-color: white;
     color: black;
     justify-items: center;
     height: 52px;
-    padding-right: 50px;
+    padding-right: 35px;
     padding-left: 42px;
     justify-items: center;
+}
+
+.Wins {
+    position: relative;
+    justify-content: center;
+    padding: 8px;   
 }
 
 .win-Total-2 {
     display: flex;
     position: absolute;
     left: 72.6rem;
-    bottom: 4rem;
+    bottom: 5px;
     font-size: 2rem;
     color: white;
     background-color:black;
     border: .2px solid white;
     height: 52px;
-    padding-right: 50px;
+    padding-right: 35px;
     padding-left: 42px;
-    
-    
 }
+
+.Wins-2 {
+    position: relative;
+    justify-content: center;
+    padding: 8px;
+}    
+
